@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clare's Bookkeeping | South West Surrey</title>
+
+<style>
+:root {
+    --primary: #4F7C82;
+    --dark: #1F2937;
+    --light: #F8FAFC;
+    --border: #E5E7EB;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--dark);
+    background: white;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+section {
+    padding: 80px 0;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+p {
+    color: #4B5563;
+}
+
+/* Header */
+
+header {
+    position: sticky;
+    top: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    z-index: 10;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--dark);
+}
+
+/* Hero */
+
+.hero {
+    padding: 120px 0;
+    text-align: center;
+    background: var(--light);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 650px;
+    margin: auto;
+    font-size: 1.15rem;
+}
+
+.hero-buttons {
+    margin-top: 35px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 14px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+.btn-secondary {
+    border: 1px solid var(--border);
+    color: var(--dark);
+}
+
+/* Services */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 24px;
+    margin-top: 50px;
+}
+
+.card {
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+/* About */
+
+.about {
+    background: var(--light);
+}
+
+.about-content {
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+}
+
+/* Area */
+
+.area {
+    text-align: center;
+}
+
+/* Contact */
+
+.contact {
+    background: var(--light);
+}
+
+.contact-form {
+    max-width: 700px;
+    margin: auto;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+button {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid var(--border);
+}
+
+@media (max-width: 768px) {
+
+.hero h1 {
+    font-size: 2.4rem;
+}
+
+section {
+    padding: 60px 0;
+}
+
+}
+
+.testimonials {
+    background: white;
+}
+
+.review-summary {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.testimonial {
+    text-align: left;
+}
+
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #4B5563;
+}
+
+.reviewer {
+    margin-top: 8px;
+    color: #6B7280;
+    font-size: 0.95rem;
+}
+
+.rating {
+    margin-top: 24px;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+.hero-buttons {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="container nav">
+
+        <div class="logo">
+            Clare's Bookkeeping
+        </div>
+
+        <div class="header-contact">
+            <a href="tel:07979355687">07979 355687</a> |
+            <a href="mailto:clare@claresbookkeeping.co.uk">clare@claresbookkeeping.co.uk</a>
+
+            <a href="#contact" class="btn btn-primary">
+                Get in Touch
+            </a>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h1>Friendly Bookkeeping Support for Small Businesses</h1>
+
+        <p>
+            I'm Clare, an experienced bookkeeper trusted by businesses for over 10 years across
+    South West Surrey to stay organised, up to date and in control of their finances.</p>
+
+    </div>
+    <div class="hero-buttons">
+
+    <a href="#contact" class="btn btn-primary">
+        Get a Free Consultation
+    </a>
+
+    <a href="tel:07979355687" class="btn btn-secondary">
+        📞 Call Clare
+    </a>
+
+    </div>
+
+<div class="hero-highlights">
+    ✓ 10+ Years Experience
+    ✓ IAB Qualified
+    ✓ 5-Star Google Reviews
+    ✓ South West Surrey Based
+</div>
+
+</section>
+
+<section id="services">
+    <div class="container">
+        <h2>Services</h2>
+
+        <div class="services-grid">
+
+            <div class="card">
+                <h3>Bookkeeping</h3>
+                <p>Accurate day-to-day bookkeeping that keeps your records organised and up to date.</p>
+            </div>
+
+            <div class="card">
+                <h3>VAT Returns</h3>
+                <p>Preparation and submission of VAT returns, including Making Tax Digital compliance.</p>
+            </div>
+
+            <div class="card">
+                <h3>Management Accounts</h3>
+                <p>Regular reporting to help you understand business performance and profitability.</p>
+            </div>
+
+            <div class="card">
+                <h3>Invoice Processing</h3>
+                <p>Efficient management of sales invoices, purchase invoices and expenses.</p>
+            </div>
+
+            <div class="card">
+                <h3>Bank Reconciliations</h3>
+                <p>Ensuring your records match your bank accounts and remain accurate.</p>
+            </div>
+
+            <div class="card">
+                <h3>Sage Accounting Support</h3>
+                <p>Expert help with Sage cloud accounting and bookkeeping processes.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="testimonials">
+    <div class="container">
+
+        <h2>Trusted by Local Businesses</h2>
+
+        <p class="review-summary">
+            ⭐⭐⭐⭐⭐ 5.0 Google Rating
+        </p>
+
+        <div class="services-grid">
+
+            <div class="card testimonial">
+                <p>
+                    "Excellent, professional service from someone who knows
+                    the job inside and out. Responsive, reliable and an
+                    absolute pleasure to work with."
+                </p>
+                <strong>★★★★★</strong>
+                <div class="reviewer">Thomas Gentle</div>
+            </div>
+
+            <div class="card testimonial">
+                <p>
+                    "Friendly, helpful and highly professional. Clare helped
+                    us improve our systems and is always available to answer
+                    queries promptly."
+                </p>
+                <strong>★★★★★</strong>
+                <div class="reviewer">Stefanie Dibben</div>
+            </div>
+
+            <div class="card testimonial">
+                <p>
+                    "A great help in keeping our records accurate and organised.
+                    Communication is excellent and everything is processed
+                    efficiently and on time."
+                </p>
+                <strong>★★★★★</strong>
+                <div class="reviewer">Noah Lott</div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="credentials">
+<div class="container">
+ 
+<h2>Professional Standards</h2>
+ 
+<div class="services-grid">
+ 
+<div class="card">
+<h3>IAB Qualified</h3>
+<img src="iab-logo-480.webp" width="160" height="60" />
+<p>
+Professional bookkeeping services provided to recognised industry standards.
+</p>
+</div>
+ 
+<div class="card">
+<h3>10+ Years Experience</h3>
+<p>
+Supporting small businesses with reliable bookkeeping and financial administration.
+</p>
+</div>
+ 
+<div class="card">
+<h3>Fully Insured</h3>
+<p>
+Professional indemnity insurance for complete peace of mind.
+</p>
+</div>
+ 
+</div>
+ 
+</div>
+</section>
+
+
+<section class="about">
+    <div class="container">
+        <div class="about-content">
+            <h2>About Clare</h2>
+
+            <p>Professional bookkeeping services for small businesses across South West Surrey. Helping you stay organised, compliant and confident in your finances.</p><br/>
+
+
+        <div class="services-grid">
+            <div class="card">
+                <h3>Experience</h3>
+                <p>After starting out as a Management Accountant in PLC companies, I set up my own practice to give local businesses a more professional service.</p>
+            </div>
+
+            <div class="card">
+                <h3>Qualified</h3>
+                <p>A full member of the International Association of Bookkeepers (IAB) working to their professional standards, rules and regulations.</p>
+            </div>
+
+            <div class="card">
+                <h3>Familiar Software</h3>
+                <p>Years of hands-on experience with Sage 50 Accounts, Sage Accounting and Xero.</p>
+            </div>
+
+            <div class="card">
+                <h3>Personal Service</h3>
+                <p>A knowledgeable, dedicated bookkeeper who gives you a personal service and helps you get the returns you deserve.</p>
+            </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <div class="container">
+
+        <h2>Get in Touch</h2>
+
+        <form class="contact-form">
+
+            <div class="form-group">
+                <input type="text" placeholder="Your Name" required>
+            </div>
+
+            <div class="form-group">
+                <input type="text" placeholder="Business Name">
+            </div>
+
+            <div class="form-group">
+                <input type="email" placeholder="Email Address" required>
+            </div>
+
+            <div class="form-group">
+                <input type="tel" placeholder="Phone Number">
+            </div>
+
+            <div class="form-group">
+                <textarea placeholder="How can I help?"></textarea>
+            </div>
+
+            <button type="submit">Send Enquiry</button>
+
+        </form>
+
+    </div>
+</section>
+
+<footer>
+<p>
+Based in Chiddingfold, Clare's Bookkeeping supports
+businesses throughout Godalming, Guildford, Farnham,
+Haslemere and across South West Surrey with their Bookkeeping, VAT Returns MTD and accounts preparation using Sage 50 Accounts and Xero.
+</p>
+    <p>© 2026 Clare's Bookkeeping</p>
+</footer>
+
+</body>
+</html>
