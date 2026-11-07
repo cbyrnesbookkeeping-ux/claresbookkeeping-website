@@ -7,6 +7,53 @@
 <meta name="description" content="Professional bookkeeping, VAT returns and accounting support for small businesses across Chiddingfold, Godalming, Haslemere, Guildford and South West Surrey." />
 <link rel="canonical" href="https://claresbookkeeping.co.uk/" />
 
+<script>
+
+document
+  .getElementById('contact-form')
+  .addEventListener('submit', async function (e) {
+
+    e.preventDefault();
+
+    const form = e.target;
+
+    const payload = {
+        name: form.name.value,
+        business: form.business.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        message: form.message.value,
+        website: form.website.value
+    };
+
+    const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
+
+        alert(
+          'Thank you. Your enquiry has been sent.'
+        );
+
+        form.reset();
+
+    } else {
+
+        alert(
+          'There was a problem sending your enquiry.'
+        );
+    }
+});
+</script>
+
+
 <style>
 :root {
     --primary: #0F766E;      /* Deep teal */
@@ -612,32 +659,43 @@ section {
     <div class="container">
 
         <h2>Get in Touch</h2>
+<form id="contact-form" class="contact-form" action="/api/contact" method="post">
 
-        <form class="contact-form">
+    <input name="name"
+           type="text"
+           placeholder="Your Name"
+           required />
 
-            <div class="form-group">
-                <input type="text" placeholder="Your Name" required>
-            </div>
+    <input name="business"
+           type="text"
+           placeholder="Business Name" />
 
-            <div class="form-group">
-                <input type="text" placeholder="Business Name">
-            </div>
+    <input name="email"
+           type="email"
+           placeholder="Email Address"
+           required />
 
-            <div class="form-group">
-                <input type="email" placeholder="Email Address" required>
-            </div>
+    <input name="phone"
+           type="tel"
+           placeholder="Phone Number" />
 
-            <div class="form-group">
-                <input type="tel" placeholder="Phone Number">
-            </div>
+    <textarea name="message"
+              placeholder="How can I help?"
+              required></textarea>
 
-            <div class="form-group">
-                <textarea placeholder="How can I help?"></textarea>
-            </div>
+<input
+  type="text"
+  name="website"
+  tabindex="-1"
+  autocomplete="off"
+  style="display:none" />
 
-            <button type="submit">Send Enquiry</button>
+    <button type="submit">
+        Send Enquiry
+    </button>
 
-        </form>
+</form>
+
 
     </div>
 </section>
