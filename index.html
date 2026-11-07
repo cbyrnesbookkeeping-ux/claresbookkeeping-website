@@ -7,10 +7,15 @@
 
 <style>
 :root {
-    --primary: #4F7C82;
-    --dark: #1F2937;
+    --primary: #0F766E;      /* Deep teal */
+    --primary-light: #14B8A6;
+    --secondary: #F59E0B;    /* Warm gold accent */
+    --dark: #0F172A;         /* Navy slate */
+    --text: #334155;
     --light: #F8FAFC;
-    --border: #E5E7EB;
+    --surface: #FFFFFF;
+    --surface-alt: #F0FDFA;
+    --border: #E2E8F0;
 }
 
 * {
@@ -81,21 +86,57 @@ header {
 
 /* Hero */
 
+.hero::before {
+    content: "";
+    position: absolute;
+    top: -200px;
+    right: -150px;
+    width: 500px;
+    height: 500px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: -150px;
+    left: -100px;
+    width: 350px;
+    height: 350px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+}
+
 .hero {
-    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+    padding: 140px 0;
     text-align: center;
-    background: var(--light);
+
+    background:
+        linear-gradient(
+            135deg,
+            #0F766E 0%,
+            #14B8A6 55%,
+            #D1FAE5 100%
+        );
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
+    color: white;
     margin-bottom: 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero p {
-    max-width: 650px;
+    color: rgba(255,255,255,0.95);
+    font-size: 1.2rem;
+    max-width: 700px;
     margin: auto;
-    font-size: 1.15rem;
 }
 
 .hero-buttons {
@@ -107,25 +148,33 @@ header {
 }
 
 .btn {
-    padding: 14px 28px;
-    border-radius: 10px;
+    padding: 15px 32px;
+    border-radius: 12px;
     text-decoration: none;
     font-weight: 600;
-    transition: .3s;
+    transition: all .3s ease;
 }
 
 .btn-primary {
-    background: var(--primary);
+    background: var(--secondary);
     color: white;
+    box-shadow:
+        0 10px 25px rgba(245,158,11,.35);
 }
 
 .btn-primary:hover {
-    opacity: 0.9;
+    transform: translateY(-2px);
 }
 
 .btn-secondary {
-    border: 1px solid var(--border);
-    color: var(--dark);
+    background: rgba(255,255,255,.15);
+    border: 1px solid rgba(255,255,255,.3);
+    color: white;
+    backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+    background: rgba(255,255,255,.25);
 }
 
 /* Services */
@@ -138,16 +187,39 @@ header {
 }
 
 .card {
-    padding: 30px;
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    background: white;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+   background: white;
+    border: none;
+    border-radius: 18px;
+    padding: 32px;
+    box-shadow:
+        0 10px 40px rgba(15,23,42,.06);
+
+    transition: all .3s ease;
+    border-top: 4px solid var(--primary-light);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 20px 50px rgba(15,23,42,.12);
 }
 
 .card h3 {
     margin-bottom: 10px;
 }
+
+/* Credentials */
+.credentials {
+    background: #F8FAFC;
+}
+
+
+.credentials .card:first-child {
+    border-top-color: var(--secondary);
+}
+
+
+
 
 /* About */
 
@@ -170,7 +242,12 @@ header {
 /* Contact */
 
 .contact {
-    background: var(--light);
+    background:
+        linear-gradient(
+            135deg,
+            #ECFDF5,
+            #F0FDFA
+        );
 }
 
 .contact-form {
@@ -207,6 +284,29 @@ button {
     cursor: pointer;
 }
 
+/* Trust */
+
+.trust-bar {
+    background: white;
+}
+
+.trust-bar .container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin-top: -35px;
+    position: relative;
+    z-index: 2;
+
+    background: white;
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.08);
+}
+
 /* Footer */
 
 footer {
@@ -228,7 +328,12 @@ section {
 }
 
 .testimonials {
-    background: white;
+    background:
+        linear-gradient(
+            180deg,
+            white,
+            #F8FAFC
+        );
 }
 
 .review-summary {
@@ -240,7 +345,14 @@ section {
 }
 
 .testimonial {
-    text-align: left;
+    background: white;
+    position: relative;
+}
+
+.testimonial::before {
+    content: "★★★★★";
+    color: var(--secondary);
+    font-size: 1.1rem;
 }
 
 .testimonial p {
@@ -268,6 +380,22 @@ section {
     justify-content: center;
     gap: 15px;
     flex-wrap: wrap;
+}
+
+.hero-highlights {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.hero-highlights span {
+    background: rgba(255,255,255,.15);
+    color: white;
+    padding: 12px 18px;
+    border-radius: 999px;
+    backdrop-filter: blur(10px);
 }
 </style>
 </head>
@@ -353,8 +481,8 @@ section {
             </div>
 
             <div class="card">
-                <h3>Sage Accounting Support</h3>
-                <p>Expert help with Sage cloud accounting and bookkeeping processes.</p>
+                <h3>Accounting Support</h3>
+                <p>Expert help with bookkeeping and accounts preparation using Sage 50 Cloud, Sage Accounting and Xero.</p>
             </div>
 
         </div>
@@ -407,39 +535,41 @@ section {
     </div>
 </section>
 
+
 <section class="credentials">
-<div class="container">
- 
-<h2>Professional Standards</h2>
- 
-<div class="services-grid">
- 
-<div class="card">
-<h3>IAB Qualified</h3>
-<img src="iab-logo-480.webp" width="160" height="60" />
-<p>
-Professional bookkeeping services provided to recognised industry standards.
-</p>
-</div>
- 
-<div class="card">
-<h3>10+ Years Experience</h3>
-<p>
-Supporting small businesses with reliable bookkeeping and financial administration.
-</p>
-</div>
- 
-<div class="card">
-<h3>Fully Insured</h3>
-<p>
-Professional indemnity insurance for complete peace of mind.
-</p>
-</div>
- 
-</div>
- 
-</div>
+    <div class="container">
+
+        <h2>Professional Standards</h2>
+        <div class="services-grid">
+
+            <div class="card">
+              <h3>IAB Qualified</h3>
+              <img src="iab-logo-480.avif" width="160" height="60" />
+              <p>
+                Professional bookkeeping services provided to recognised industry standards.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>10+ Years Experience</h3>
+              <p>
+                Supporting small businesses with reliable bookkeeping and financial administration.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Fully Insured</h3>
+              <p>
+                Professional indemnity insurance for complete peace of mind.
+              </p>
+            </div>
+
+        </div>
+
+    </div>
 </section>
+
+
 
 
 <section class="about">
@@ -512,9 +642,7 @@ Professional indemnity insurance for complete peace of mind.
 
 <footer>
 <p>
-Based in Chiddingfold, Clare's Bookkeeping supports
-businesses throughout Godalming, Guildford, Farnham,
-Haslemere and across South West Surrey with their Bookkeeping, VAT Returns MTD and accounts preparation using Sage 50 Accounts and Xero.
+Based in Chiddingfold, Clare's Bookkeeping supports businesses throughout Godalming, Guildford, Farnham, Haslemere and across South West Surrey with their Bookkeeping, VAT Returns MTD and accounts preparation using Sage 50 Accounts and Xero.
 </p>
     <p>© 2026 Clare's Bookkeeping</p>
 </footer>
