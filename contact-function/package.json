@@ -1,0 +1,11 @@
+{
+  "name": "clares-bookkeeping-api",
+  "version": "1.0.0",
+  "description": "Contact form API",
+  "main": "contact/index.js",
+  "dependencies": {
+    "@azure/identity": "^4.4.1",
+    "@microsoft/microsoft-graph-client": "^3.0.7",
+    "isomorphic-fetch": "^3.0.0"
+  }
+}
